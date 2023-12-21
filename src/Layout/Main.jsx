@@ -1,8 +1,11 @@
+import { Outlet } from "react-router-dom";
+import NavBar from "../Shared/NavBar/NavBar";
 
 const Main = () => {
     return (
         <div>
-            <h2 className="text-xl">this is paragraph</h2>
+            <NavBar></NavBar>
+            <Outlet></Outlet>
         </div>
     );
 };
