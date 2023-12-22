@@ -17,9 +17,9 @@ const NavBar = () => {
             </NavLink>
         </li>
         <li>
-            <NavLink to="/petLesting" className={({ isActive, isPending }) =>
+            <NavLink to="/aboutus" className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "text-[#e76f51]" : ""}>
-                Dashboard
+                About Us
             </NavLink>
         </li>
         
@@ -45,7 +45,7 @@ const NavBar = () => {
                 </div>
             </div>
             <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-md dropdown-content bg-base-100 text-black rounded-box w-52">
-                <li><a>Dashboard</a></li>
+                <li><NavLink to={"/dashboard"}>Dashboard</NavLink></li>
                 <li><button onClick={handleLogOut}><a>Logout</a></button></li>
             </ul>
         </div> : <li>

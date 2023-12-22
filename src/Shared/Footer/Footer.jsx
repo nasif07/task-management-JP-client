@@ -11,9 +11,9 @@ const Footer = () => {
             <nav>
                 <header className="footer-title">Social</header>
                 <div className="grid grid-flow-col gap-4">
-                    <a><FaLinkedin className="text-3xl"></FaLinkedin></a>
-                    <a><FaFacebook className="text-3xl"></FaFacebook></a>
-                    <a><FaGithub className="text-3xl"></FaGithub></a>
+                    <a href="https://www.linkedin.com/in/nasiful-islam-nasif-6490b3286/"><FaLinkedin className="text-3xl"></FaLinkedin></a>
+                    <a href="https://www.facebook.com/md.nsf.12"><FaFacebook className="text-3xl"></FaFacebook></a>
+                    <a href="https://github.com/Nasif07?fbclid=IwAR113QRRvP9crxwTdOcpxSVYvsfQo6Td1U2TjQYz9w_xiO-rU1GLa366BxM"><FaGithub className="text-3xl"></FaGithub></a>
                 </div>
             </nav>
         </footer>

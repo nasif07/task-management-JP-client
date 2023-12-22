@@ -19,6 +19,7 @@ const AuthProvider = ({children}) => {
         return signInWithPopup(auth, provider)
     }
     const handleProfile = (name, profileURL) => {
+        setLoading(true);
         return updateProfile(auth.currentUser, {
             displayName: name, photoURL: profileURL
         })
@@ -49,7 +50,8 @@ const AuthProvider = ({children}) => {
         googleSignIn,
         emailPasswordLogIn,
         user,
-        logOut
+        logOut,
+        loading
     }
     return (
         <AuthContext.Provider value={AuthInfo}>

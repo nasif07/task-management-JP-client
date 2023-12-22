@@ -4,9 +4,10 @@ import { Navigate } from "react-router-dom";
 
 const ProtectRoute = ({children}) => {
     const { user, loading } = useContext(AuthContext);
+    // console.log(user, loading);
 
     if (loading) {
-        <div>
+       return <div>
             <span className="loading loading-ball loading-xs"></span>
             <span className="loading loading-ball loading-sm"></span>
             <span className="loading loading-ball loading-md"></span>
