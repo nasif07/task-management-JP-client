@@ -1,6 +1,14 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const NavBar = () => {
+    const {user, logOut} = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut();
+        window.location.href = '/';
+    }
     const navLinks = <>
         <li>
             <NavLink to="/" className={({ isActive, isPending }) =>
@@ -11,14 +19,10 @@ const NavBar = () => {
         <li>
             <NavLink to="/petLesting" className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "text-[#e76f51]" : ""}>
-                Pet Lesting
+                Dashboard
             </NavLink>
         </li>
-        <li>
-            <NavLink to="/login" className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "text-[#e76f51]" : ""}>Login
-            </NavLink>
-        </li>
+        
         <li>
             {/* <NavLink to="/login" className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "text-[#e76f51]" : ""}>
@@ -33,17 +37,22 @@ const NavBar = () => {
                         <button className="btn">Login</button></Link>
             } */}
         </li>
-        <div className="dropdown dropdown-end py-2">
+        
+        {user ? <div className="dropdown dropdown-end py-2">
             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
-                    <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                    <img alt="Tailwind CSS Navbar component" src={user.photoURL} />
                 </div>
             </div>
             <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-md dropdown-content bg-base-100 text-black rounded-box w-52">
                 <li><a>Dashboard</a></li>
-                <li><a>Logout</a></li>
+                <li><button onClick={handleLogOut}><a>Logout</a></button></li>
             </ul>
-        </div>
+        </div> : <li>
+            <NavLink to="/login" className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "text-[#e76f51]" : ""}>Login
+            </NavLink>
+        </li>}
     </>
     return (
         <div className="drawer md:px-10 fixed bg-black z-10 bg-opacity-10 text-white">
