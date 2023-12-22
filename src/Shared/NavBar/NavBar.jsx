@@ -15,8 +15,8 @@ const NavBar = () => {
             </NavLink>
         </li>
         <li>
-            <NavLink to="/donationcampaign" className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "text-[#e76f51]" : ""}>Donation Campaigns
+            <NavLink to="/login" className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "text-[#e76f51]" : ""}>Login
             </NavLink>
         </li>
         <li>
@@ -33,6 +33,17 @@ const NavBar = () => {
                         <button className="btn">Login</button></Link>
             } */}
         </li>
+        <div className="dropdown dropdown-end py-2">
+            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                <div className="w-10 rounded-full">
+                    <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                </div>
+            </div>
+            <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-md dropdown-content bg-base-100 text-black rounded-box w-52">
+                <li><a>Dashboard</a></li>
+                <li><a>Logout</a></li>
+            </ul>
+        </div>
     </>
     return (
         <div className="drawer md:px-10 fixed bg-black z-10 bg-opacity-10 text-white">
@@ -47,10 +58,12 @@ const NavBar = () => {
                     </div>
                     <div className="flex-1 mx-2 text-2xl font-bold"><span className="text-[#e76f51]">Project</span>Pulse</div>
                     <div className="flex-none hidden md:block">
-                        <ul className="gap-6 menu-horizontal font-semibold text-lg">
+                        <ul className="gap-6 menu-horizontal font-semibold text-lg flex justify-center items-center">
                             {/* Navbar menu content here */}
-                           {navLinks}
+                            {navLinks}
+
                         </ul>
+
                     </div>
                 </div>
                 {/* Page content here */}
@@ -58,10 +71,9 @@ const NavBar = () => {
             </div>
             <div className="drawer-side">
                 <label htmlFor="my-drawer-3" aria-label="close sidebar" className="drawer-overlay"></label>
-                <ul className="menu p-4 w-80 min-h-full bg-base-200">
+                <ul className="menu p-4 w-80 min-h-full bg-base-200 text-black flex items-center">
                     {/* Sidebar content here */}
-                    <li><a>Home</a></li>
-                    <li><a>About</a></li>
+                    {navLinks}
                 </ul>
             </div>
         </div>
