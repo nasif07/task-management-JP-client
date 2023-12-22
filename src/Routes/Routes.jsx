@@ -7,6 +7,8 @@ import Dashboard from "../Pages/Dashboard/Dashboard";
 import UserHome from "../Pages/UserHome/UserHome";
 import ProtectRoute from "../PrivateRoute/ProtectRoute";
 import AboutUs from "../Pages/AboutUs/AboutUs";
+import AddATask from "../Pages/AddATask/AddATask";
+import TodoList from "../Pages/TodoList/TodoList";
 
 const router = createBrowserRouter([
     {
@@ -38,6 +40,14 @@ const router = createBrowserRouter([
             {
                 path: "/dashboard",
                 element: <UserHome></UserHome>
+            },
+            {
+                path: "/dashboard/addatask",
+                element: <ProtectRoute><AddATask></AddATask></ProtectRoute>
+            },
+            {
+                path: "/dashboard/todolist",
+                element: <ProtectRoute><TodoList></TodoList></ProtectRoute>
             }
         ]
     }

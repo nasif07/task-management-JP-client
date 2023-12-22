@@ -1,7 +1,8 @@
 import { FaDollarSign, FaHorse } from "react-icons/fa6";
 import { NavLink, Outlet } from "react-router-dom";
 // import { IoIosAddCircleOutline } from "react-icons/io";
-import { FaBook, FaDonate } from "react-icons/fa";
+import { FaBook,  } from "react-icons/fa";
+import { FaTasks } from "react-icons/fa";
 import NavBar from "../../Shared/NavBar/NavBar";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
@@ -25,6 +26,9 @@ const Dashboard = () => {
                             <NavLink to={"/dashboard/addatask"}><FaBook></FaBook>Add a Task</NavLink>
                         </li>
                         <li>
+                            <NavLink to={"/dashboard/todolist"}><FaTasks></FaTasks>Todo List</NavLink>
+                        </li>
+                        {/* <li>
                             <NavLink to={"/dashboard/myAddedPets"}><FaHorse></FaHorse>My Added Pets</NavLink>
                         </li>
                         <li>
@@ -32,7 +36,7 @@ const Dashboard = () => {
                         </li>
                         <li>
                             <NavLink to={"/dashboard/myDonations"}><FaDollarSign></FaDollarSign>My Donations</NavLink>
-                        </li>
+                        </li> */}
                     </ul>
                 </div>
                 <div className="flex-1 p-8">
